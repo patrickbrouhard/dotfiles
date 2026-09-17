@@ -1,0 +1,38 @@
+# See https://git-scm.com/docs/git-config
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status -sb                                             # Affiche un état Git compact avec la branche courante.
+	cm = commit -m                                              # Crée un commit avec le message fourni.
+	sw = switch                                                 # Change de branche
+	unstage = restore --staged                                  # Retire un fichier de la zone de staging sans modifier son contenu.
+	amend = commit --amend --no-edit                            # Ajoute les changements au dernier commit sans modifier son message.
+	last = log -1 --stat                                        # Affiche le dernier commit et les fichiers qu'il a modifiés.
+	lg = log --graph --decorate --oneline --all                 # Affiche l'historique compact sous forme de graphe.
+	acm = "!f() { git add -A && git commit -m \"$*\"; }; f"     # Stage tous les changements puis crée un commit avec le message fourni.
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true   # Automatically set upstream branch on push
+[diff]
+	algorithm = histogram    # Clearer diffs on moved/edited lines
+	colorMoved = plain       # Highlight moved blocks in diffs
+	mnemonicPrefix = true    # More intuitive refs in diff output
+[commit]
+	verbose = true           # Include diff comment in commit message template
+[column]
+	ui = auto 			     # Output in columns when possible
+[branch]
+	sort = -committerdate    # Sort branches by most recent commit first
+[tag]
+	sort = -version:refname  # Sort version numbers as you would expect
+[rerere]
+	enabled = true           # Record and reuse conflict resolutions
+	autoupdate = true        # Apply stored conflict resolutions automatically
+[user]
+	name = Patrick
+	email = 186724585+patrickbrouhard@users.noreply.github.com
