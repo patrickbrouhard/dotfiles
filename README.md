@@ -11,7 +11,7 @@ Personal configuration files for my [Omarchy](https://omarchy.org/) Linux enviro
 * **Hyprland**
 
   * Mouse acceleration disabled with the `flat` profile.
-  * Dual-monitor setup:
+  * Dual-monitor setup (4k + 1920)
 
 * **PipeWire**
 
