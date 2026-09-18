@@ -39,6 +39,7 @@ dotfiles/
 └── wireplumber/
     └── .config/wireplumber/wireplumber.conf.d/
         └── 51-disable-nvidia-hdmi.conf```
+```
 
 ## Installation
 
