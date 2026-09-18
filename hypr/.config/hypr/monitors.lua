@@ -22,6 +22,19 @@ hl.monitor({
   scale = 1,
 })
 
+-- Workspaces par défaut
+hl.workspace_rule({
+  workspace = "1",
+  monitor = "DP-1",
+  default = true,
+})
+
+hl.workspace_rule({
+  workspace = "11",
+  monitor = "HDMI-A-2",
+  default = true,
+})
+
 -- Fallback pour un éventuel autre écran
 hl.monitor({
   output = "",
