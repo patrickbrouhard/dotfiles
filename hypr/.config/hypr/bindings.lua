@@ -32,3 +32,31 @@
 -- Use the MX Keys S dictation key to toggle VoxType recording.
 o.bind("SUPER + H", nil, "voxtype record toggle")
 
+-- config Wuwa
+local wuwa_class = "steam_app_3513350"
+
+local function wuwa_number_bind(input_code, number)
+  hl.bind("code:" .. input_code, function()
+    local window = hl.get_active_window()
+
+    if not window or window.class ~= wuwa_class then
+      return { ok = false }
+    end
+
+    hl.dispatch(
+      hl.dsp.exec_cmd(
+        "xdotool keyup Shift_L Shift_R; xdotool key " .. number
+      )
+    )
+  end, {
+    auto_consuming = true,
+    dont_inhibit = true,
+    allow_input_capture = true,
+  })
+end
+
+wuwa_number_bind("10", "1")
+wuwa_number_bind("11", "2")
+wuwa_number_bind("12", "3")
+wuwa_number_bind("13", "4")
+
