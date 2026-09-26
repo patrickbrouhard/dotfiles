@@ -30,9 +30,47 @@
 --
 
 -- Use the MX Keys S dictation key to toggle VoxType recording.
+
 o.bind("SUPER + H", nil, "voxtype record toggle")
 
--- config Wuwa
+-- Workspace navigation
+hl.unbind("SUPER + mouse_down")
+hl.unbind("SUPER + mouse_up")
+
+o.bind(
+  "SUPER + mouse_down",
+  "Next workspace on current monitor",
+  hl.dsp.focus({ workspace = "m+1" })
+)
+
+o.bind(
+  "SUPER + mouse_up",
+  "Previous workspace on current monitor",
+  hl.dsp.focus({ workspace = "m-1" })
+)
+
+o.bind(
+  "SUPER + N",
+  "Next empty workspace on current monitor",
+  hl.dsp.focus({ workspace = "emptynm" })
+)
+
+-- Secondary monitor workspaces (numpad 1-0 -> workspaces 11-20)
+o.bind("SUPER + code:87", "Workspace 11", hl.dsp.focus({ workspace = "11" }))
+o.bind("SUPER + code:88", "Workspace 12", hl.dsp.focus({ workspace = "12" }))
+o.bind("SUPER + code:89", "Workspace 13", hl.dsp.focus({ workspace = "13" }))
+o.bind("SUPER + code:83", "Workspace 14", hl.dsp.focus({ workspace = "14" }))
+o.bind("SUPER + code:84", "Workspace 15", hl.dsp.focus({ workspace = "15" }))
+o.bind("SUPER + code:85", "Workspace 16", hl.dsp.focus({ workspace = "16" }))
+o.bind("SUPER + code:79", "Workspace 17", hl.dsp.focus({ workspace = "17" }))
+o.bind("SUPER + code:80", "Workspace 18", hl.dsp.focus({ workspace = "18" }))
+o.bind("SUPER + code:81", "Workspace 19", hl.dsp.focus({ workspace = "19" }))
+o.bind("SUPER + code:90", "Workspace 20", hl.dsp.focus({ workspace = "20" }))
+
+------------------------------------------------------------------------------
+-----------------
+-- config Wuwa --
+-----------------
 local wuwa_class = "steam_app_3513350"
 
 local function wuwa_number_bind(input_code, number)
