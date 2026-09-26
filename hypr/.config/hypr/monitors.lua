@@ -43,6 +43,24 @@ hl.monitor({
   scale = omarchy_monitor_scale,
 })
 
+-- Workspaces 1-10 sur l'écran principal
+for workspace = 1, 10 do
+  hl.workspace_rule({
+    workspace = tostring(workspace),
+    monitor = "DP-1",
+    default = (workspace == 1),
+  })
+end
+
+-- Workspaces 11-20 sur l'écran secondaire
+for workspace = 11, 20 do
+  hl.workspace_rule({
+    workspace = tostring(workspace),
+    monitor = "HDMI-A-2",
+    default = (workspace == 11),
+  })
+end
+
 -- Configure a specific monitor.
 -- hl.monitor({ output = "DP-2", mode = "2560x1440@144", position = "0x0", scale = 1 })
 
