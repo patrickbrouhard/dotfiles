@@ -8,7 +8,14 @@
 # (don't mess with these directly, just overwrite them here!)
 source "$OMARCHY_PATH/default/bash/rc"
 
-# Add your own exports, aliases, and functions here.
-#
-# Make an alias for invoking commands you use constantly
-# alias p='python'
+#######################################################
+# ALIASES
+#######################################################
+
+# List
+alias la='ls -a' # List All
+alias lof='ls -f' # List Only Files
+alias lod='ls -D' # List Only Directories
+
+# Wayland input debugging
+alias wevk='wev -f wl_keyboard:key'
